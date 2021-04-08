@@ -1,0 +1,24 @@
+<nav class="menu" role="navigation">
+    <ul>
+        <li><a href="#">Inicio</a></li>
+        <li><a href="#">Sobre nosotros</a></li>
+        <li><a href="#">Contacto</a></li>
+        <ng-container *ngIf="!logeado; else frmlogin">
+            <li><a href="#">Iniciar sesión</a></li>
+            <li><a href="#">Registrarse</a></li>
+        </ng-container>
+    </ul>
+</nav>
+{{caca}}
+<ng-template #frmlogin>
+    <div class="login">
+        <input type="text" (ngModelChange)="log($event)">
+    </div>
+</ng-template>
+<ng-template #profile>
+    <div class="login">
+        <li><a href="">Mi perfil</a></li>
+        <li><a href="">Mis clientes</a></li>
+        <li (click)="cerrarSesion();"><a href="#">Cerrar Sesión</a></li>
+    </div>
+</ng-template>
